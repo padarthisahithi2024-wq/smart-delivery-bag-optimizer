@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Delivery Bag Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>📦 Smart Delivery Bag Optimizer</h1>
+    <p>Explore four algorithmic approaches to package selection</p>
+</header>
+
+<main>
+    <section class="intro">
+        <h2>About Our Project</h2>
+        <p>
+            A delivery person has a bag with limited weight capacity.
+            The goal is to select packages that provide the maximum
+            total value without exceeding the bag capacity.
+        </p>
+        <p>
+            This project solves the 0/1 Knapsack Problem using
+            Brute Force, Greedy, Dynamic Programming and Backtracking.
+        </p>
+    </section>
+
+    <section class="problem">
+        <h2>Enter Package Details</h2>
+
+        <label for="capacity">Delivery Bag Capacity (kg)</label>
+        <input type="number" id="capacity" min="1"
+               max="5000" placeholder="Example: 10">
+
+        <label for="packages">
+            Package details (one package per line)
+        </label>
+
+        <p class="hint">
+            Format: Package Name, Weight, Value
+        </p>
+
+        <textarea id="packages" rows="7"
+            placeholder="Laptop, 5, 100&#10;Books, 4, 90&#10;Food, 3, 70&#10;Clothes, 2, 40"></textarea>
+
+        <div class="form-buttons">
+            <button onclick="loadExample()" class="secondary">
+                Load Example
+            </button>
+
+            <button onclick="runAllAlgorithms()">
+                Optimize Packages
+            </button>
+        </div>
+
+        <p id="error"></p>
+    </section>
+
+    <section class="algorithms">
+        <h2>Choose an Algorithm</h2>
+
+        <div class="tabs">
+            <button onclick="showAlgorithm('brute')" class="tab active"
+                id="tab-brute">Brute Force</button>
+
+            <button onclick="showAlgorithm('greedy')" class="tab"
+                id="tab-greedy">Greedy</button>
+
+            <button onclick="showAlgorithm('dp')" class="tab"
+                id="tab-dp">Dynamic Programming</button>
+
+            <button onclick="showAlgorithm('backtracking')" class="tab"
+                id="tab-backtracking">Backtracking</button>
+        </div>
+
+        <div id="result">
+            Enter package details and click Optimize Packages.
+        </div>
+    </section>
+
+    <section class="comparison">
+        <h2>Algorithm Complexity Comparison</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Algorithm</th>
+                    <th>Time Complexity</th>
+                    <th>Space Complexity</th>
+                    <th>Optimal?</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Brute Force</td>
+                    <td>O(n × 2ⁿ)</td>
+                    <td>O(n)</td>
+                    <td>Yes</td>
+                </tr>
+
+                <tr>
+                    <td>Greedy</td>
+                    <td>O(n log n)</td>
+                    <td>O(n)</td>
+                    <td>Not always</td>
+                </tr>
+
+                <tr>
+                    <td>Dynamic Programming</td>
+                    <td>O(n × W)</td>
+                    <td>O(n × W)</td>
+                    <td>Yes</td>
+                </tr>
+
+                <tr>
+                    <td>Backtracking</td>
+                    <td>O(2ⁿ)</td>
+                    <td>O(n)</td>
+                    <td>Yes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="hint">
+            n = Number of packages, W = Bag capacity.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>Smart Delivery Bag Optimizer | Algorithm Explorer Project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
